@@ -6,17 +6,23 @@
     <title>Fun Game - Master Coding Hub</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-color: #0b0f19;
-            --card-bg: #151f32;
-            --arena-bg: #0d1624;
-            --primary-orange: #ff6b00;
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-            --glow: rgba(255, 107, 0, 0.15);
+            --bg-color: #040814;
+            --card-bg: rgba(10, 20, 42, 0.75);
+            --arena-bg: rgba(5, 11, 26, 0.9);
+            
+            /* Cyber Basketball High-End Palette */
+            --neon-orange: #ff5100;
+            --neon-glow: #ff7700;
+            --cyber-cyan: #00f3ff;
+            
+            --text-main: #ffffff;
+            --text-muted: #768fa9;
+            --ui-border: rgba(0, 243, 255, 0.2);
+            --ui-orange-border: rgba(255, 81, 0, 0.3);
         }
 
         * {
@@ -26,7 +32,7 @@
         }
 
         body {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Rajdhani', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             min-height: 100vh;
@@ -36,9 +42,10 @@
             align-items: center;
             overflow-x: hidden;
             position: relative;
+            letter-spacing: 0.5px;
         }
 
-        /* Subtle basketball court lines in the background for theme depth */
+        /* Video Game Cyber-Court Grid & Tech Overlay Background */
         body::before {
             content: "";
             position: absolute;
@@ -47,163 +54,251 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 50% 50%, transparent 60%, rgba(255,107,0,0.03) 61%, transparent 65%),
-                linear-gradient(to bottom, rgba(255,107,0,0.01) 1px, transparent 1px);
-            background-size: 100% 100%, 20px 20px;
-            z-index: -1;
+                linear-gradient(to bottom, rgba(4, 8, 20, 0.5), #040814),
+                linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 30px 30px, 30px 30px;
+            z-index: -2;
         }
 
-        /* Main Container Box */
+        /* Glowing Neon Horizon Line */
+        body::after {
+            content: "";
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            width: 200%;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 81, 0, 0.08) 0%, transparent 60%);
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Main Container Box - Premium Game Dashboard HUD */
         .container {
             background-color: var(--card-bg);
-            padding: 3rem 2rem;
-            border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 50px var(--glow);
-            border: 1px solid rgba(255, 107, 0, 0.2);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 3.5rem 2.5rem;
+            border-radius: 12px;
+            
+            /* Intense Video Game Menu Glow Architecture */
+            border: 2px solid var(--ui-border);
+            border-top: 2px solid var(--cyber-cyan);
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.7),
+                0 0 30px rgba(0, 243, 255, 0.15),
+                inset 0 0 20px rgba(0, 243, 255, 0.05);
+            
             text-align: center;
-            max-width: 600px;
+            max-width: 650px;
             width: 90%;
-            margin: 2rem auto;
-            transform: translateY(0);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 3rem auto;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
+
+        /* Top Corner Tech Brackets for AAA Game UI Feel */
+        .container::before, .container::after {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border-color: var(--neon-orange);
+            border-style: solid;
+            pointer-events: none;
+        }
+        .container::before { top: -2px; left: -2px; border-width: 3px 0 0 3px; }
+        .container::after { bottom: -2px; right: -2px; border-width: 0 3px 3px 0; }
 
         .container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), 0 0 60px rgba(255, 107, 0, 0.3);
+            border-color: rgba(255, 81, 0, 0.5);
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.8),
+                0 0 40px rgba(255, 81, 0, 0.25),
+                inset 0 0 30px rgba(255, 81, 0, 0.05);
         }
 
-        /* Basketball Hoop/Ball Inspired Icon Indicator */
+        /* Animated Hologram Badge */
         .icon-badge {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #ff8c00, var(--primary-orange));
-            border-radius: 50%;
-            margin: 0 auto 1.5rem;
+            width: 80px;
+            height: 80px;
+            background: rgba(4, 8, 20, 0.8);
+            border: 2px solid var(--neon-orange);
+            border-radius: 6px;
+            margin: 0 auto 1.8rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 0 20px rgba(255, 107, 0, 0.6);
+            box-shadow: 0 0 20px rgba(255, 81, 0, 0.3);
+            transform: rotate(45deg);
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover .icon-badge {
+            transform: rotate(135deg);
         }
 
         .icon-badge svg {
-            width: 40px;
-            height: 40px;
-            fill: var(--bg-color);
+            width: 42px;
+            height: 42px;
+            fill: var(--text-main);
+            transform: rotate(-45deg);
+            transition: transform 0.3s ease;
+        }
+        .container:hover .icon-badge svg {
+            transform: rotate(-135deg);
+            fill: var(--neon-orange);
         }
 
-        /* Typography */
+        /* High-End Game Typography */
         h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: -1px;
-            margin-bottom: 1.2rem;
-            background: linear-gradient(to right, #ffffff, #ffb37b);
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            background: linear-gradient(180deg, #ffffff 40%, #a2cadc 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
         }
 
         p {
-            font-size: 1.1rem;
-            line-height: 1.6;
+            font-size: 1.2rem;
+            line-height: 1.5;
             color: var(--text-muted);
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            font-weight: 500;
         }
 
-        /* Game Arena Container */
+        /* Game Arena Module (Inner Display Grid) */
         .game-arena {
             background-color: var(--arena-bg);
-            border: 2px dashed rgba(255, 107, 0, 0.4);
-            border-radius: 16px;
-            padding: 2.5rem 1.5rem;
-            margin: 2rem 0;
-            position: relative;
+            border: 1px solid var(--ui-orange-border);
+            border-left: 4px solid var(--neon-orange);
+            border-radius: 6px;
+            padding: 2.5rem 2rem;
+            margin: 2.5rem 0;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6);
         }
 
         .arena-title {
-            font-size: 1.4rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
             font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 1.5rem;
-            letter-spacing: 1px;
+            color: var(--cyber-cyan);
+            margin-bottom: 1.8rem;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            animation: pulseText 1.5s infinite ease-in-out;
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+            animation: glitchPulse 2s infinite steps(2);
         }
 
-        @keyframes pulseText {
-            0%, 100% { opacity: 0.6; }
-            50% { opacity: 1; color: var(--primary-orange); }
+        @keyframes glitchPulse {
+            0%, 100% { opacity: 0.9; text-shadow: 0 0 8px rgba(0, 243, 255, 0.6); }
+            50% { opacity: 0.6; text-shadow: 0 0 15px rgba(255, 81, 0, 0.8); color: var(--neon-orange); }
         }
 
-        /* Arena Control Buttons Grid */
         .arena-controls {
             display: flex;
-            gap: 10px;
+            gap: 15px;
             justify-content: center;
             flex-wrap: wrap;
         }
 
-        /* Arena Action Buttons with Expansion Transitions */
+        /* Sci-Fi UI Arcade Tiles (Buttons) */
         .arena-btn {
-            background-color: rgba(255, 107, 0, 0.1);
+            background: linear-gradient(135deg, rgba(20, 35, 65, 0.7) 0%, rgba(10, 18, 36, 0.9) 100%);
             color: #ffffff;
-            border: 1px solid var(--primary-orange);
-            padding: 0.6rem 1.2rem;
-            border-radius: 8px;
-            font-family: 'Space Grotesk', sans-serif;
+            border: 1px solid var(--ui-border);
+            padding: 0.9rem 1.8rem;
+            border-radius: 4px;
+            font-family: 'Orbitron', sans-serif;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
             cursor: pointer;
             text-transform: uppercase;
-            transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.25s ease, box-shadow 0.25s ease;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(10px 0%, 100% 0%, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0% 100%, 0% 10px);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .arena-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 243, 255, 0.2), transparent);
+            transition: all 0.4s;
+        }
+
+        .arena-btn:hover::before {
+            left: 100%;
         }
 
         .arena-btn:hover {
-            transform: scale(1.08);
-            background-color: var(--primary-orange);
-            color: var(--bg-color);
-            box-shadow: 0 0 15px rgba(255, 107, 0, 0.4);
+            transform: translateY(-3px) scale(1.05);
+            border-color: var(--cyber-cyan);
+            color: var(--cyber-cyan);
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+            background: rgba(15, 32, 67, 0.9);
+        }
+        
+        .arena-btn:active {
+            transform: scale(0.98);
         }
 
-        /* CTA Button styled like a premium court floor accent */
+        /* Master Arena Access System Button */
         .btn {
             display: inline-block;
-            background-color: transparent;
-            color: var(--primary-orange);
-            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(90deg, var(--neon-orange) 0%, #ff7700 100%);
+            color: #040814;
+            font-weight: 900;
+            font-size: 1.1rem;
             text-decoration: none;
             text-transform: uppercase;
-            padding: 0.8rem 2rem;
-            border: 2px solid var(--primary-orange);
-            border-radius: 50px;
-            transition: all 0.3s ease;
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 4px;
+            letter-spacing: 2px;
             cursor: pointer;
-            letter-spacing: 1px;
+            box-shadow: 0 0 25px rgba(255, 81, 0, 0.4);
+            clip-path: polygon(15px 0%, 100% 0%, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0% 100%, 0% 15px);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         .btn:hover {
-            background-color: var(--primary-orange);
-            color: var(--bg-color);
-            box-shadow: 0 0 25px rgba(255, 107, 0, 0.4);
+            background: linear-gradient(90deg, #ff7700 0%, #ffaa00 100%);
+            box-shadow: 0 0 40px var(--neon-glow);
+            transform: scale(1.04);
+            color: #000;
         }
 
-        /* Footer */
+        /* Footer Dashboard Panel */
         footer {
-            padding: 2rem;
+            padding: 2.5rem;
             color: var(--text-muted);
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
             width: 100%;
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            background: rgba(11, 15, 25, 0.8);
-            backdrop-filter: blur(10px);
+            text-transform: uppercase;
+            border-top: 1px solid rgba(0, 243, 255, 0.1);
+            background: rgba(4, 8, 20, 0.9);
+            backdrop-filter: blur(8px);
         }
 
         footer span {
-            color: var(--primary-orange);
-            font-weight: bold;
+            color: var(--cyber-cyan);
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.4);
         }
     </style>
 </head>
@@ -221,11 +316,11 @@
         <p>This is my master coding hub where sports passion meets high-performance engineering. Here, we build, test, and launch court-ready interactive applications and next-level web games designed to dominate the digital playground.</p>
         
         <div class="game-arena">
-            <div class="arena-title">Loading Adventure...</div>
+            <div class="arena-title">// SYSTEM: LOADING ADVENTURE...</div>
             <div class="arena-controls">
-                <button class="arena-btn">Warm Up</button>
-                <button class="arena-btn">Tip Off</button>
-                <button class="arena-btn">Leaderboard</button>
+                <button class="arena-btn">[ Warm Up ]</button>
+                <button class="arena-btn">[ Tip Off ]</button>
+                <button class="arena-btn">[ Leaderboard ]</button>
             </div>
         </div>
         
@@ -233,7 +328,7 @@
     </div>
 
     <footer>
-        <p>Created by <span>flashhoops kids</span> in 2026</p>
+        <p>System Mainframe Created by <span>flashhoops kids</span> // Core.2026</p>
     </footer>
 
 </body>
