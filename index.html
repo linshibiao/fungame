@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fun Game - Master Coding Hub</title>
+    <title>Fun Game - Cyber Basketball Arena</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
@@ -12,9 +12,8 @@
         :root {
             --bg-color: #040814;
             --card-bg: rgba(10, 20, 42, 0.75);
-            --arena-bg: rgba(5, 11, 26, 0.9);
+            --arena-bg: rgba(5, 11, 26, 0.95);
             
-            /* Cyber Basketball High-End Palette */
             --neon-orange: #ff5100;
             --neon-glow: #ff7700;
             --cyber-cyan: #00f3ff;
@@ -45,7 +44,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* Video Game Cyber-Court Grid & Tech Overlay Background */
         body::before {
             content: "";
             position: absolute;
@@ -61,7 +59,6 @@
             z-index: -2;
         }
 
-        /* Glowing Neon Horizon Line */
         body::after {
             content: "";
             position: absolute;
@@ -75,31 +72,25 @@
             pointer-events: none;
         }
 
-        /* Main Container Box - Premium Game Dashboard HUD */
         .container {
             background-color: var(--card-bg);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            padding: 3.5rem 2.5rem;
+            padding: 2.5rem 2rem;
             border-radius: 12px;
-            
-            /* Intense Video Game Menu Glow Architecture */
             border: 2px solid var(--ui-border);
             border-top: 2px solid var(--cyber-cyan);
             box-shadow: 
                 0 25px 50px rgba(0, 0, 0, 0.7),
                 0 0 30px rgba(0, 243, 255, 0.15),
                 inset 0 0 20px rgba(0, 243, 255, 0.05);
-            
             text-align: center;
             max-width: 650px;
             width: 90%;
-            margin: 3rem auto;
+            margin: 2rem auto;
             position: relative;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* Top Corner Tech Brackets for AAA Game UI Feel */
         .container::before, .container::after {
             content: "";
             position: absolute;
@@ -112,177 +103,163 @@
         .container::before { top: -2px; left: -2px; border-width: 3px 0 0 3px; }
         .container::after { bottom: -2px; right: -2px; border-width: 0 3px 3px 0; }
 
-        .container:hover {
-            border-color: rgba(255, 81, 0, 0.5);
-            box-shadow: 
-                0 30px 60px rgba(0, 0, 0, 0.8),
-                0 0 40px rgba(255, 81, 0, 0.25),
-                inset 0 0 30px rgba(255, 81, 0, 0.05);
-        }
-
-        /* Animated Hologram Badge */
         .icon-badge {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             background: rgba(4, 8, 20, 0.8);
             border: 2px solid var(--neon-orange);
             border-radius: 6px;
-            margin: 0 auto 1.8rem;
+            margin: 0 auto 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 0 20px rgba(255, 81, 0, 0.3);
             transform: rotate(45deg);
-            transition: transform 0.3s ease;
-        }
-
-        .container:hover .icon-badge {
-            transform: rotate(135deg);
         }
 
         .icon-badge svg {
-            width: 42px;
-            height: 42px;
+            width: 32px;
+            height: 32px;
             fill: var(--text-main);
             transform: rotate(-45deg);
-            transition: transform 0.3s ease;
-        }
-        .container:hover .icon-badge svg {
-            transform: rotate(-135deg);
-            fill: var(--neon-orange);
         }
 
-        /* High-End Game Typography */
         h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             background: linear-gradient(180deg, #ffffff 40%, #a2cadc 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
         }
 
-        p {
-            font-size: 1.2rem;
-            line-height: 1.5;
+        p.intro {
+            font-size: 1.1rem;
             color: var(--text-muted);
-            margin-bottom: 2.5rem;
-            font-weight: 500;
+            margin-bottom: 1.5rem;
         }
 
-        /* Game Arena Module (Inner Display Grid) */
+        /* --- Game Arena Dashboard Layout --- */
         .game-arena {
             background-color: var(--arena-bg);
             border: 1px solid var(--ui-orange-border);
             border-left: 4px solid var(--neon-orange);
             border-radius: 6px;
-            padding: 2.5rem 2rem;
-            margin: 2.5rem 0;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
             box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6);
+            position: relative;
         }
 
         .arena-title {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: var(--cyber-cyan);
-            margin-bottom: 1.8rem;
-            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
-            animation: glitchPulse 2s infinite steps(2);
         }
 
-        @keyframes glitchPulse {
-            0%, 100% { opacity: 0.9; text-shadow: 0 0 8px rgba(0, 243, 255, 0.6); }
-            50% { opacity: 0.6; text-shadow: 0 0 15px rgba(255, 81, 0, 0.8); color: var(--neon-orange); }
+        /* Live Score & Timer Sub-HUD */
+        .hud-display {
+            display: flex;
+            justify-content: space-around;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 0.5rem;
+            border: 1px solid rgba(0, 243, 255, 0.1);
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+        }
+        .hud-val {
+            color: var(--neon-orange);
+            font-weight: 900;
+        }
+
+        /* Interactive Canvas Arena */
+        #courtCanvas {
+            background: radial-gradient(circle at 50% 10%, #101f38 0%, #050b1a 80%);
+            border: 1px solid rgba(0, 243, 255, 0.3);
+            border-radius: 4px;
+            display: block;
+            margin: 0 auto 1.5rem;
+            max-width: 100%;
+            cursor: crosshair;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
         }
 
         .arena-controls {
             display: flex;
-            gap: 15px;
+            gap: 10px;
             justify-content: center;
             flex-wrap: wrap;
         }
 
-        /* Sci-Fi UI Arcade Tiles (Buttons) */
         .arena-btn {
             background: linear-gradient(135deg, rgba(20, 35, 65, 0.7) 0%, rgba(10, 18, 36, 0.9) 100%);
             color: #ffffff;
             border: 1px solid var(--ui-border);
-            padding: 0.9rem 1.8rem;
+            padding: 0.7rem 1.4rem;
             border-radius: 4px;
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
-            font-size: 0.85rem;
-            letter-spacing: 1.5px;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
             cursor: pointer;
             text-transform: uppercase;
-            position: relative;
-            overflow: hidden;
-            clip-path: polygon(10px 0%, 100% 0%, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0% 100%, 0% 10px);
+            clip-path: polygon(8px 0%, 100% 0%, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0% 100%, 0% 8px);
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-        .arena-btn::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 243, 255, 0.2), transparent);
-            transition: all 0.4s;
-        }
-
-        .arena-btn:hover::before {
-            left: 100%;
-        }
-
         .arena-btn:hover {
-            transform: translateY(-3px) scale(1.05);
+            transform: translateY(-2px) scale(1.05);
             border-color: var(--cyber-cyan);
             color: var(--cyber-cyan);
-            box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
-            background: rgba(15, 32, 67, 0.9);
-        }
-        
-        .arena-btn:active {
-            transform: scale(0.98);
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
         }
 
-        /* Master Arena Access System Button */
+        .arena-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none !important;
+            box-shadow: none !important;
+            border-color: var(--ui-border) !important;
+            color: #fff !important;
+        }
+
+        /* System Action Overrides */
         .btn {
             display: inline-block;
             font-family: 'Orbitron', sans-serif;
             background: linear-gradient(90deg, var(--neon-orange) 0%, #ff7700 100%);
             color: #040814;
             font-weight: 900;
-            font-size: 1.1rem;
+            font-size: 1rem;
             text-decoration: none;
             text-transform: uppercase;
-            padding: 1.2rem 3rem;
+            padding: 1rem 2.5rem;
             border: none;
             border-radius: 4px;
             letter-spacing: 2px;
             cursor: pointer;
             box-shadow: 0 0 25px rgba(255, 81, 0, 0.4);
-            clip-path: polygon(15px 0%, 100% 0%, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0% 100%, 0% 15px);
+            clip-path: polygon(12px 0%, 100% 0%, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0% 100%, 0% 12px);
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         .btn:hover {
             background: linear-gradient(90deg, #ff7700 0%, #ffaa00 100%);
-            box-shadow: 0 0 40px var(--neon-glow);
+            box-shadow: 0 0 35px var(--neon-glow);
             transform: scale(1.04);
-            color: #000;
         }
 
-        /* Footer Dashboard Panel */
         footer {
-            padding: 2.5rem;
+            padding: 2rem;
             color: var(--text-muted);
             font-family: 'Orbitron', sans-serif;
             font-size: 0.8rem;
@@ -312,24 +289,255 @@
         </div>
         
         <h1>Welcome to fun game</h1>
-        
-        <p>This is my master coding hub where sports passion meets high-performance engineering. Here, we build, test, and launch court-ready interactive applications and next-level web games designed to dominate the digital playground.</p>
+        <p class="intro">Your master coding hub playground. Click <strong>Tip Off</strong> to test your trickshot trajectory algorithms!</p>
         
         <div class="game-arena">
-            <div class="arena-title">// SYSTEM: LOADING ADVENTURE...</div>
+            <div class="arena-title" id="gameStatus">// SYSTEM: READY TO HOOP</div>
+            
+            <div class="hud-display">
+                <div>SCORE: <span id="scoreVal" class="hud-val">0</span></div>
+                <div>TIME: <span id="timeVal" class="hud-val">30</span>s</div>
+                <div>HI-SCORE: <span id="hiScoreVal" class="hud-val">0</span></div>
+            </div>
+
+            <canvas id="courtCanvas" width="480" height="280"></canvas>
+
             <div class="arena-controls">
-                <button class="arena-btn">[ Warm Up ]</button>
-                <button class="arena-btn">[ Tip Off ]</button>
-                <button class="arena-btn">[ Leaderboard ]</button>
+                <button class="arena-btn" id="btnWarmUp">Warm Up</button>
+                <button class="arena-btn" id="btnTipOff">Tip Off</button>
+                <button class="arena-btn" id="btnReset">Reset</button>
             </div>
         </div>
         
-        <a href="#" class="btn">Enter Arena</a>
+        <button class="btn" onclick="alert('System Core Active. Dominate the court!')">Sync Profile</button>
     </div>
 
     <footer>
         <p>System Mainframe Created by <span>flashhoops kids</span> // Core.2026</p>
     </footer>
 
+    <script>
+        const canvas = document.getElementById('courtCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Audio Synthesis Setup (No external assets required!)
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        function playTone(freq, type, duration) {
+            try {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = type;
+                osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+                gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start();
+                osc.stop(audioCtx.currentTime + duration);
+            } catch(e) {}
+        }
+
+        // Game Configuration & Engine State
+        let score = 0;
+        let hiScore = 0;
+        let timeLeft = 30;
+        let isPlaying = false;
+        let gameInterval = null;
+
+        // Physics Components
+        const gravity = 0.35;
+        let ball = { x: 60, y: 220, vx: 0, vy: 0, radius: 10, isFlying: false, baseSkin: '#ff5100' };
+        const hoop = { x: 400, y: 90, width: 35, rimHeight: 4 };
+        let pointer = { x: 0, y: 0 };
+
+        // Handle Tracking Input Trajectories
+        canvas.addEventListener('mousemove', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            pointer.x = (e.clientX - rect.left) * (canvas.width / rect.width);
+            pointer.y = (e.clientY - rect.top) * (canvas.height / rect.height);
+        });
+
+        canvas.addEventListener('click', () => {
+            if (ball.isFlying) return;
+            
+            // Unmute Audio context on human interaction
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+
+            // Calculate Vector Forces based on Crosshair positions
+            const dx = pointer.x - ball.x;
+            const dy = pointer.y - ball.y;
+            
+            // Limit and safe-scale vectors
+            ball.vx = Math.min(Math.max(dx * 0.065, 3), 14);
+            ball.vy = Math.min(Math.max(dy * 0.065, -14), -3);
+            ball.isFlying = true;
+            
+            playTone(280, 'triangle', 0.15);
+        });
+
+        // Interactive HUD Controllers
+        document.getElementById('btnWarmUp').addEventListener('click', () => {
+            resetBall();
+            document.getElementById('gameStatus').innerText = "// TRAINING MODULE ACTIVE";
+        });
+
+        document.getElementById('btnTipOff').addEventListener('click', () => {
+            if (isPlaying) return;
+            score = 0;
+            timeLeft = 30;
+            isPlaying = true;
+            resetBall();
+            
+            document.getElementById('scoreVal').innerText = score;
+            document.getElementById('timeVal').innerText = timeLeft;
+            document.getElementById('gameStatus').innerText = "// ARENA MATCH LIVE!";
+            document.getElementById('btnTipOff').disabled = true;
+
+            playTone(587.33, 'sine', 0.4); // Game whistle tone
+
+            gameInterval = setInterval(() => {
+                timeLeft--;
+                document.getElementById('timeVal').innerText = timeLeft;
+                if (timeLeft <= 0) {
+                    endMatch();
+                }
+            }, 1000);
+        });
+
+        document.getElementById('btnReset').addEventListener('click', () => {
+            endMatch();
+            score = 0;
+            document.getElementById('scoreVal').innerText = score;
+            document.getElementById('gameStatus').innerText = "// SYSTEM: SYSTEM RESET";
+        });
+
+        function resetBall() {
+            ball.x = 40 + Math.random() * 80; // randomize shot positions slightly
+            ball.y = 230;
+            ball.vx = 0;
+            ball.vy = 0;
+            ball.isFlying = false;
+        }
+
+        function endMatch() {
+            isPlaying = false;
+            clearInterval(gameInterval);
+            document.getElementById('btnTipOff').disabled = false;
+            document.getElementById('gameStatus').innerText = "// MATCH OVER. FINAL SCORE: " + score;
+            if (score > hiScore) {
+                hiScore = score;
+                document.getElementById('hiScoreVal').innerText = hiScore;
+            }
+            playTone(220, 'sawtooth', 0.6);
+            resetBall();
+        }
+
+        // Central Physics / Render Tick Loop
+        function engineUpdate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // 1. Draw Basketball Architecture Environment (Backboard & Hoop)
+            ctx.strokeStyle = '#00f3ff';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.moveTo(hoop.x + hoop.width + 10, hoop.y - 40);
+            ctx.lineTo(hoop.x + hoop.width + 10, hoop.y + 20);
+            ctx.stroke(); // Backboard line
+
+            ctx.strokeStyle = '#ff5100';
+            ctx.lineWidth = 4;
+            ctx.beginPath();
+            ctx.moveTo(hoop.x, hoop.y);
+            ctx.lineTo(hoop.x + hoop.width, hoop.y);
+            ctx.stroke(); // Rim rim
+
+            // Net Mesh Rendering
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            for(let i=0; i <= hoop.width; i+=7) {
+                ctx.moveTo(hoop.x + i, hoop.y);
+                ctx.lineTo(hoop.x + i + 4, hoop.y + 25);
+                ctx.moveTo(hoop.x + i, hoop.y);
+                ctx.lineTo(hoop.x + i - 4, hoop.y + 25);
+            }
+            ctx.stroke();
+
+            // Ground Floor lines
+            ctx.strokeStyle = 'rgba(0, 243, 255, 0.15)';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(0, 255);
+            ctx.lineTo(canvas.width, 255);
+            ctx.stroke();
+
+            // 2. Trajectory Targeting Vector (Guideline)
+            if (!ball.isFlying) {
+                ctx.strokeStyle = 'rgba(0, 243, 255, 0.25)';
+                ctx.setLineDash([4, 4]);
+                ctx.beginPath();
+                ctx.moveTo(ball.x, ball.y);
+                ctx.lineTo(pointer.x, pointer.y);
+                ctx.stroke();
+                ctx.setLineDash([]);
+            }
+
+            // 3. Mathematical Ball Physics Processing
+            if (ball.isFlying) {
+                ball.vy += gravity;
+                ball.x += ball.vx;
+                ball.y += ball.vy;
+
+                // Collision detection via simple intersection checking boundaries
+                // Check scoring criteria (Passing rim accurately descending)
+                if (ball.vy > 0 && 
+                    ball.x >= hoop.x && ball.x <= hoop.x + hoop.width &&
+                    ball.y >= hoop.y - 6 && ball.y <= hoop.y + 10) {
+                    
+                    if (isPlaying) {
+                        score += 3;
+                        document.getElementById('scoreVal').innerText = score;
+                    }
+                    document.getElementById('gameStatus').innerText = "// SPLASH! +3 POINTS";
+                    playTone(880, 'sine', 0.2);
+                    
+                    // Force state shift out of scoring zone
+                    ball.y += 20; 
+                }
+
+                // Court floor boundaries
+                if (ball.y + ball.radius >= 255) {
+                    ball.y = 255 - ball.radius;
+                    ball.vy = -ball.vy * 0.45; // dampening effect bouncing
+                    ball.vx *= 0.8;
+                    if(Math.abs(ball.vy) < 1) resetBall();
+                }
+
+                // Out of screen limits reset trigger
+                if (ball.x > canvas.width + 50 || ball.x < -50) {
+                    resetBall();
+                }
+            }
+
+            // 4. Draw Ball Unit
+            ctx.fillStyle = ball.baseSkin;
+            ctx.shadowColor = varValue('--neon-glow');
+            ctx.shadowBlur = ball.isFlying ? 15 : 0;
+            ctx.beginPath();
+            ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.shadowBlur = 0; // reset blur
+
+            requestAnimationFrame(engineUpdate);
+        }
+
+        // Helper calculation logic helper
+        function varValue(varName) {
+            return getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
+        }
+
+        // Boot-Up Game Engine
+        engineUpdate();
+    </script>
 </body>
 </html>
