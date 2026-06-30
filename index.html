@@ -12,6 +12,7 @@
         :root {
             --bg-color: #0b0f19;
             --card-bg: #151f32;
+            --arena-bg: #0d1624;
             --primary-orange: #ff6b00;
             --text-main: #f3f4f6;
             --text-muted: #9ca3af;
@@ -62,7 +63,7 @@
             text-align: center;
             max-width: 600px;
             width: 90%;
-            margin: auto cubic-bezier(0.16, 1, 0.3, 1);
+            margin: 2rem auto;
             transform: translateY(0);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -108,6 +109,61 @@
             line-height: 1.6;
             color: var(--text-muted);
             margin-bottom: 2rem;
+        }
+
+        /* Game Arena Container */
+        .game-arena {
+            background-color: var(--arena-bg);
+            border: 2px dashed rgba(255, 107, 0, 0.4);
+            border-radius: 16px;
+            padding: 2.5rem 1.5rem;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .arena-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            animation: pulseText 1.5s infinite ease-in-out;
+        }
+
+        @keyframes pulseText {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; color: var(--primary-orange); }
+        }
+
+        /* Arena Control Buttons Grid */
+        .arena-controls {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Arena Action Buttons with Expansion Transitions */
+        .arena-btn {
+            background-color: rgba(255, 107, 0, 0.1);
+            color: #ffffff;
+            border: 1px solid var(--primary-orange);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .arena-btn:hover {
+            transform: scale(1.08);
+            background-color: var(--primary-orange);
+            color: var(--bg-color);
+            box-shadow: 0 0 15px rgba(255, 107, 0, 0.4);
         }
 
         /* CTA Button styled like a premium court floor accent */
@@ -163,6 +219,15 @@
         <h1>Welcome to fun game</h1>
         
         <p>This is my master coding hub where sports passion meets high-performance engineering. Here, we build, test, and launch court-ready interactive applications and next-level web games designed to dominate the digital playground.</p>
+        
+        <div class="game-arena">
+            <div class="arena-title">Loading Adventure...</div>
+            <div class="arena-controls">
+                <button class="arena-btn">Warm Up</button>
+                <button class="arena-btn">Tip Off</button>
+                <button class="arena-btn">Leaderboard</button>
+            </div>
+        </div>
         
         <a href="#" class="btn">Enter Arena</a>
     </div>
